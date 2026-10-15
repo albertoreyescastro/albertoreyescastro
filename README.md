@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./assets/hero.svg" width="100%" alt="Alberto Reyes Castro — Applied AI Engineer in London building reliable AI systems" />
+  <img src="./assets/hero.svg" width="100%" alt="Alberto Reyes Castro — Applied AI Engineer in London focused on reliable, efficient AI systems" />
 </p>
 
 <p align="center">
@@ -8,111 +8,86 @@
   <a href="https://www.kaggle.com/albertoreyescastro20"><img src="./assets/button-kaggle.svg" height="42" alt="Kaggle" /></a>
 </p>
 
-## I build the engineering around the model.
-
-Model capability is only one part of a useful AI system. I focus on what happens **around inference**: hardware-aware execution, routing, failure handling, evaluation, reproducibility, trust boundaries and human control.
-
-I work as an **Applied AI Engineer at TeachScribe** while completing an **MSc in Artificial Intelligence Technology with Advanced Practice at Northumbria University London**. My background in **Physics** shapes how I approach AI: define the system, measure what matters, make uncertainty explicit and test failure modes—not only the happy path.
-
+Engineering reliable, efficient AI systems
+I am an Applied AI Engineer at TeachScribe, completing an MSc in Artificial Intelligence Technology with Advanced Practice at Northumbria University London. My work focuses on multimodal and on-device machine learning, speech inference and reliable AI orchestration.
+With a background in Physics, I approach AI through experimentation, measurement and explicit assumptions. My engineering focus spans model execution, evaluation and system reliability: making effective use of available hardware, handling failures predictably, producing reproducible evidence and defining clear boundaries for automation.
 <table>
 <tr>
 <td width="50%" valign="top">
 
-### Current focus
-
-- Multimodal & on-device ML
-- Agentic AI & reliability engineering
-- Speech / audio AI
-- ML evaluation & technical tooling
-- Efficient inference & model migration
-
+Technical focus
+- Multimodal and on-device machine learning
+- Agent orchestration and system reliability
+- Speech processing and audio AI
+- ML evaluation and technical tooling
+- Efficient inference and model migration
 </td>
 <td width="50%" valign="top">
 
-### Engineering principles
-
-- Deterministic checks around probabilistic models
-- Bounded recovery; explicit ownership and health
-- Fail closed on unknown or stale state
-- Reproducible evidence before human-controlled promotion
-
+Engineering principles
+- Deterministic validation around probabilistic models
+- Explicit execution ownership and observable system state
+- Bounded recovery and fail-closed handling of stale or unknown state
+- Reproducible verification and human approval gates
 </td>
 </tr>
 </table>
 
-## Selected engineering work
-
+Selected engineering projects
 <table>
 <tr>
 <td width="50%" valign="top">
 
-### [Agent Control Center](https://github.com/albertoreyescastro/agent-control-center)
-**Resilient multi-agent orchestration / reliability engineering**
-
-Capability-aware routing, leases and heartbeats, bounded recovery, separate verification, spend-safety constraints, a fail-closed publication boundary and a human merge gate.
-
-[Live system →](https://albertoreyescastro.github.io/agent-control-center/)
-
+Agent Control Center
+Multi-agent orchestration and reliability engineering
+An interactive demonstration of a multi-agent orchestration architecture featuring capability-aware routing, execution leases, heartbeat tracking, bounded recovery and independent verification. The design incorporates spending controls, fail-closed publication checks and human approval before merging.
+Explore the interactive demo →
 </td>
 <td width="50%" valign="top">
 
-### [ModelHawk](https://github.com/albertoreyescastro/ModelHawk)
-**ML notebook auditing / AI-assisted technical review**
-
-Static Jupyter analysis that detects ML workflow signals and risks, produces structured findings, adds an AI examiner layer with provider fallbacks, and compiles LaTeX PDF reports.
-
-`deterministic audit → evidence → AI examiner → PDF`
-
+ModelHawk
+ML workflow auditing and AI-assisted technical review
+A Jupyter notebook auditing tool that uses static analysis to identify ML workflow patterns and potential risks. Structured findings support an AI-assisted review layer with provider fallbacks and LaTeX PDF reporting.
+Static analysis → structured findings → AI-assisted review → PDF report
 </td>
 </tr>
 <tr>
 <td width="50%" valign="top">
 
-### [Adaptive Whisper Pipeline](https://github.com/albertoreyescastro/adaptive-whisper-transcription-pipeline)
-**Hardware-aware speech inference / robust local workflow**
-
-A reusable `faster-whisper` pipeline with CPU/GPU-aware model selection, audio normalisation, VAD presets, anti-repetition safeguards, fingerprinted cache files, quality checks and TXT/SRT output.
-
-`CPU / INT8` · `CUDA / FP16` · `FFmpeg` · `VAD`
-
+Adaptive Whisper Pipeline
+Hardware-aware speech inference
+A reusable transcription pipeline built on faster-whisper, with hardware-aware model selection and CPU/GPU execution. Includes audio normalisation, configurable voice activity detection, repetition safeguards, fingerprinted caching, quality checks and TXT/SRT export.
+CPU / INT8 · CUDA / FP16 · FFmpeg · VAD
 </td>
 <td width="50%" valign="top">
 
-### [Computational Physics](https://github.com/albertoreyescastro/computational-physics-numerical-methods)
-**Numerical methods / scientific computing**
-
-Scientific Python implementations of interpolation, numerical quadrature, ODE solvers and stochastic simulation, including physical applications such as Planck's law.
-
-`NumPy` · `SciPy` · `Matplotlib` · `SymPy`
-
+Computational Physics
+Numerical methods and scientific computing
+Scientific Python implementations of interpolation, numerical quadrature, ordinary differential equation solvers and stochastic simulation. Applies numerical techniques to physical problems, including applications of Planck's law.
+NumPy · SciPy · Matplotlib · SymPy
 </td>
 </tr>
 </table>
 
-## How I think about AI systems
-
+Engineering approach
 <p align="center">
-  <img src="./assets/engineering-map.svg" width="100%" alt="Model capability to routing, bounded execution, verification and human authority" />
+  <img src="./assets/engineering-map.svg" width="100%" alt="AI systems engineering: model capability, routing, bounded execution, verification and human oversight" />
 </p>
 
-A strong model does not remove the need for systems engineering. I prefer architectures where **eligibility is explicit, failures are bounded, evidence is inspectable and automation stops where human authority is required**. I apply the same discipline experimentally: establish a baseline, control variables, choose metrics that match the real failure cost and inspect individual errors rather than relying only on aggregate scores.
+I design around explicit execution criteria, bounded failure recovery, inspectable evidence and clear human decision points. Reliability depends on how a system behaves when inputs, models or dependencies fall outside expected conditions.
+My evaluation approach starts with a baseline and controlled comparisons. I select metrics that reflect the practical cost of failure and inspect individual errors alongside aggregate performance to understand where a system is reliable and where it needs improvement.
+Technical stack
+Area	Tools
+Machine learning and inference	Python · NumPy · SciPy · pandas · scikit-learn · faster-whisper · ONNX
+AI systems and application engineering	TypeScript · Next.js · JavaScript · Node.js · REST APIs · Ollama · GitHub Actions
+Scientific computing and development	Jupyter · Matplotlib · SymPy · LaTeX · SQL · Git
+Embedded systems and AIoT	C++ · ESP32-S3 · Wokwi · Blynk
 
-## Working stack
 
-| Area | Tools |
-|---|---|
-| **ML / inference** | `Python` · `NumPy` · `SciPy` · `pandas` · `scikit-learn` · `faster-whisper` · `ONNX` |
-| **AI systems** | `TypeScript` · `Next.js` · `JavaScript` · `Node.js` · `REST APIs` · `Ollama` · `GitHub Actions` |
-| **Scientific / technical** | `Jupyter` · `Matplotlib` · `SymPy` · `LaTeX` · `SQL` · `Git` |
-| **Embedded / AIoT** | `C++` · `ESP32-S3` · `Wokwi` · `Blynk` |
-
-**Research interests:** reliable and efficient multimodal systems · model compression / quantization · on-device inference · retrieval reliability during model migration · evaluation methods that expose failure cases hidden by averages.
-
----
-
+Research interests: Reliable and efficient multimodal systems · model compression and quantisation · on-device inference · retrieval reliability during model migration · evaluation methods that reveal failures hidden by aggregate metrics.
 <p align="center">
   <strong>Alberto Reyes Castro</strong><br/>
-  Applied AI Engineer · Physics graduate · MSc AI Technology · London, UK<br/><br/>
+  Applied AI Engineer · Physics Graduate · MSc AI Technology Candidate · London, UK<br/><br/>
   <a href="mailto:albertoreyescastro20@gmail.com">Email</a> ·
   <a href="https://albertoreyescastro.github.io">Portfolio</a> ·
   <a href="https://www.linkedin.com/in/alberto-reyes-ba5546238">LinkedIn</a> ·
