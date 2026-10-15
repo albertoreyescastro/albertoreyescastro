@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="190" viewBox="0 0 1200 190" role="img" aria-labelledby="title desc">
+  <title id="title">Engineering approach</title>
+  <desc id="desc">A compact systems diagram from model capability through routing and verification to human authority.</desc>
+  <defs>
+    <linearGradient id="line" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#68e0cf"/>
+      <stop offset="0.5" stop-color="#9cc5ff"/>
+      <stop offset="1" stop-color="#c4b5fd"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="190" rx="22" fill="#0b1320"/>
+  <rect x="1" y="1" width="1198" height="188" rx="21" fill="none" stroke="#ffffff" stroke-opacity="0.08"/>
+  <path d="M145 82H1055" stroke="url(#line)" stroke-width="2" opacity="0.65"/>
+
+  <g font-family="Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif" text-anchor="middle">
+    <g transform="translate(145 82)">
+      <circle r="34" fill="#0d2830" stroke="#68e0cf"/>
+      <text y="5" fill="#e2fff8" font-size="14" font-weight="700">MODEL</text>
+      <text y="62" fill="#93a9bb" font-size="13">capability</text>
+    </g>
+    <g transform="translate(372 82)">
+      <circle r="34" fill="#102238" stroke="#9cc5ff"/>
+      <text y="5" fill="#e7f0ff" font-size="14" font-weight="700">ROUTE</text>
+      <text y="62" fill="#93a9bb" font-size="13">eligibility</text>
+    </g>
+    <g transform="translate(600 82)">
+      <circle r="34" fill="#161d31" stroke="#c4b5fd"/>
+      <text y="5" fill="#f0ebff" font-size="14" font-weight="700">RUN</text>
+      <text y="62" fill="#93a9bb" font-size="13">bounded state</text>
+    </g>
+    <g transform="translate(828 82)">
+      <circle r="34" fill="#1b2330" stroke="#d7e0e8" stroke-opacity="0.75"/>
+      <text y="5" fill="#f0f4f7" font-size="14" font-weight="700">VERIFY</text>
+      <text y="62" fill="#93a9bb" font-size="13">evidence</text>
+    </g>
+    <g transform="translate(1055 82)">
+      <circle r="34" fill="#17251f" stroke="#a7f3d0"/>
+      <text y="5" fill="#edfff4" font-size="14" font-weight="700">HUMAN</text>
+      <text y="62" fill="#93a9bb" font-size="13">authority</text>
+    </g>
+  </g>
+</svg>
