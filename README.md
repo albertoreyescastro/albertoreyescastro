@@ -10,9 +10,9 @@
 
 ## I build the engineering around the model.
 
-Model capability is only one part of a useful AI system. I am interested in what happens **around inference**: hardware-aware execution, routing, failure handling, evaluation, reproducibility, trust boundaries and human control.
+Model capability is only one part of a useful AI system. I focus on what happens **around inference**: hardware-aware execution, routing, failure handling, evaluation, reproducibility, trust boundaries and human control.
 
-I currently work as an **Applied AI Engineer at TeachScribe** while completing an **MSc in Artificial Intelligence Technology with Advanced Practice at Northumbria University London**. My background in **Physics** shapes how I approach AI: define the system, measure what matters, make uncertainty explicit, and test the failure modes rather than only the happy path.
+I work as an **Applied AI Engineer at TeachScribe** while completing an **MSc in Artificial Intelligence Technology with Advanced Practice at Northumbria University London**. My background in **Physics** shapes how I approach AI: define the system, measure what matters, make uncertainty explicit and test failure modes—not only the happy path.
 
 <table>
 <tr>
@@ -20,24 +20,21 @@ I currently work as an **Applied AI Engineer at TeachScribe** while completing a
 
 ### Current focus
 
-- Multimodal and on-device machine learning
-- Reliable / agentic AI systems
-- Speech and audio AI
-- ML evaluation and technical tooling
-- Efficient inference and model migration
-- Scientific computing
+- Multimodal & on-device ML
+- Agentic AI & reliability engineering
+- Speech / audio AI
+- ML evaluation & technical tooling
+- Efficient inference & model migration
 
 </td>
 <td width="50%" valign="top">
 
-### Engineering lens
+### Engineering principles
 
 - Deterministic checks around probabilistic models
-- Bounded recovery instead of unbounded retries
-- Explicit ownership, health and capability state
-- Fail-closed handling of unknown or stale state
-- Human authority at consequential boundaries
-- Reproducible evidence over opaque success claims
+- Bounded recovery; explicit ownership and health
+- Fail closed on unknown or stale state
+- Reproducible evidence before human-controlled promotion
 
 </td>
 </tr>
@@ -52,7 +49,7 @@ I currently work as an **Applied AI Engineer at TeachScribe** while completing a
 ### [Agent Control Center](https://github.com/albertoreyescastro/agent-control-center)
 **Resilient multi-agent orchestration / reliability engineering**
 
-A sanitized interactive control-plane showcase built around capability-aware routing, leases and heartbeats, bounded recovery, separate verification, quota/spend safety, a fail-closed publication boundary and a human merge gate.
+Capability-aware routing, leases and heartbeats, bounded recovery, separate verification, spend-safety constraints, a fail-closed publication boundary and a human merge gate.
 
 [Live system →](https://albertoreyescastro.github.io/agent-control-center/)
 
@@ -62,9 +59,9 @@ A sanitized interactive control-plane showcase built around capability-aware rou
 ### [ModelHawk](https://github.com/albertoreyescastro/ModelHawk)
 **ML notebook auditing / AI-assisted technical review**
 
-A static Jupyter audit engine that detects ML workflow signals and risks, produces structured findings, adds an AI examiner layer with provider fallbacks, and compiles professional LaTeX PDF reports.
+Static Jupyter analysis that detects ML workflow signals and risks, produces structured findings, adds an AI examiner layer with provider fallbacks, and compiles LaTeX PDF reports.
 
-`deterministic audit → structured evidence → AI examiner → PDF`
+`deterministic audit → evidence → AI examiner → PDF`
 
 </td>
 </tr>
@@ -84,7 +81,7 @@ A reusable `faster-whisper` pipeline with CPU/GPU-aware model selection, audio n
 ### [Computational Physics](https://github.com/albertoreyescastro/computational-physics-numerical-methods)
 **Numerical methods / scientific computing**
 
-Scientific Python implementations covering interpolation, numerical quadrature, ODE solvers and stochastic simulation, with comparisons against NumPy/SciPy and physical applications including Planck's law.
+Scientific Python implementations of interpolation, numerical quadrature, ODE solvers and stochastic simulation, including physical applications such as Planck's law.
 
 `NumPy` · `SciPy` · `Matplotlib` · `SymPy`
 
@@ -98,27 +95,18 @@ Scientific Python implementations covering interpolation, numerical quadrature, 
   <img src="./assets/engineering-map.svg" width="100%" alt="Model capability to routing, bounded execution, verification and human authority" />
 </p>
 
-A strong model does not remove the need for systems engineering. I prefer architectures where **eligibility is explicit, failures are bounded, evidence is inspectable and automation stops where human authority is required**. For local and edge workloads, I also care about the practical trade-offs between **quality, latency, memory, privacy and compute**.
-
-That systems view sits alongside a scientific one: establish a baseline, control variables, choose metrics that match the actual failure cost, inspect individual errors, and avoid treating an average score as the whole result.
+A strong model does not remove the need for systems engineering. I prefer architectures where **eligibility is explicit, failures are bounded, evidence is inspectable and automation stops where human authority is required**. I apply the same discipline experimentally: establish a baseline, control variables, choose metrics that match the real failure cost and inspect individual errors rather than relying only on aggregate scores.
 
 ## Working stack
 
-**ML / inference**  
-`Python` · `NumPy` · `SciPy` · `pandas` · `scikit-learn` · `faster-whisper` · `ONNX`
+| Area | Tools |
+|---|---|
+| **ML / inference** | `Python` · `NumPy` · `SciPy` · `pandas` · `scikit-learn` · `faster-whisper` · `ONNX` |
+| **AI systems** | `TypeScript` · `Next.js` · `JavaScript` · `Node.js` · `REST APIs` · `Ollama` · `GitHub Actions` |
+| **Scientific / technical** | `Jupyter` · `Matplotlib` · `SymPy` · `LaTeX` · `SQL` · `Git` |
+| **Embedded / AIoT** | `C++` · `ESP32-S3` · `Wokwi` · `Blynk` |
 
-**AI applications / systems**  
-`TypeScript` · `Next.js` · `JavaScript` · `Node.js` · `REST APIs` · `Ollama` · `GitHub Actions`
-
-**Scientific / technical work**  
-`Jupyter` · `Matplotlib` · `SymPy` · `LaTeX` · `SQL` · `Git`
-
-**Embedded / AIoT**  
-`C++` · `ESP32-S3` · `Wokwi` · `Blynk`
-
-## Research interests
-
-Reliable and efficient multimodal systems, **model compression / quantization**, on-device inference, retrieval reliability during model migration, and evaluation methods that expose failure cases hidden by aggregate metrics.
+**Research interests:** reliable and efficient multimodal systems · model compression / quantization · on-device inference · retrieval reliability during model migration · evaluation methods that expose failure cases hidden by averages.
 
 ---
 
