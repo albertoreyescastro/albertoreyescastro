@@ -110,7 +110,7 @@ My evaluation approach starts with a baseline and controlled comparisons. I sele
 | **Machine learning and inference** | `Python` · `NumPy` · `SciPy` · `pandas` · `scikit-learn` · `faster-whisper` · `ONNX` |
 | **AI systems and application engineering** | `TypeScript` · `Next.js` · `JavaScript` · `Node.js` · `REST APIs` · `Ollama` · `GitHub Actions` |
 | **Scientific computing and development** | `Jupyter` · `Matplotlib` · `SymPy` · `LaTeX` · `SQL` · `Git` |
-| **Embedded systems and AIoT** | `C++` · `ESP32-S3` · `Wokwi` · `Blynk` |
+| **Embedded systems and AIoT** | `C++` · `ESP32-S3` · `Wokwi` · `Blynk` · `Edge Impulse` |
 
 **Research interests:** Reliable and efficient multimodal systems · model compression and quantisation · on-device inference · retrieval reliability during model migration · evaluation methods that reveal failures hidden by aggregate metrics.
 
