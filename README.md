@@ -10,9 +10,9 @@
 
 ## Engineering reliable, efficient AI systems
 
-I am an **Applied AI Engineer at TeachScribe**, completing an **MSc in Artificial Intelligence Technology with Advanced Practice at Northumbria University London**. My work focuses on **multimodal and on-device machine learning, speech inference and reliable AI orchestration**.
+I am an **Applied AI Engineer at TeachScribe**, completing an **MSc in Artificial Intelligence Technology with Advanced Practice at Northumbria University London**. With a **BSc in Physics** from the University of La Laguna, I approach AI through controlled experiments, measurement and explicit assumptions.
 
-With a background in **Physics**, I approach AI through experimentation, measurement and explicit assumptions. My engineering focus spans model execution, evaluation and system reliability: making effective use of available hardware, handling failures predictably, producing reproducible evidence and defining clear boundaries for automation.
+My work spans **multimodal and on-device ML, efficient inference, ML evaluation and reliable AI systems**. At TeachScribe, I designed, implemented, measured and delivered an Android image–text retrieval pipeline. Previously, I worked with Python and scientific communication at the **Instituto de Astrofísica de Canarias (IAC)**.
 
 <table>
 <tr>
@@ -21,20 +21,20 @@ With a background in **Physics**, I approach AI through experimentation, measure
 ### Technical focus
 
 - Multimodal and on-device machine learning
-- Agent orchestration and system reliability
-- Speech processing and audio AI
-- ML evaluation and technical tooling
-- Efficient inference and model migration
+- Model selection, INT8 inference and embedding reuse
+- ML evaluation and technical auditing
+- Reliable agent orchestration
+- Speech processing and scientific computing
 
 </td>
 <td width="50%" valign="top">
 
 ### Engineering principles
 
-- Deterministic validation around probabilistic models
-- Explicit execution ownership and observable system state
-- Bounded recovery and fail-closed handling of stale or unknown state
-- Reproducible verification and human approval gates
+- Controlled comparisons and measurable outcomes
+- Deterministic checks around probabilistic models
+- Explicit ownership, bounded recovery and fail-closed state
+- Reproducible evidence and human approval gates
 
 </td>
 </tr>
@@ -46,52 +46,68 @@ With a background in **Physics**, I approach AI through experimentation, measure
 <tr>
 <td width="50%" valign="top">
 
-### [Agent Control Center](https://github.com/albertoreyescastro/agent-control-center)
+### [TeachScribe — On-Device Multimodal Retrieval](https://github.com/albertoreyescastro/teachscribe-on-device-multimodal-retrieval)
 
-**Multi-agent orchestration and reliability engineering**
+**Production-integrated applied ML · Android**
 
-An interactive demonstration of a multi-agent orchestration architecture featuring capability-aware routing, execution leases, heartbeat tracking, bounded recovery and independent verification. The design incorporates spending controls, fail-closed publication checks and human approval before merging.
+Benchmarked **five vision-language models**, selected TinyCLIP 39M/16 and deployed separate **INT8 ONNX** text/image encoders with native Kotlin preprocessing and RAM/SQLite embedding reuse. Retrieval stays on-device; teachers retain the final photo-selection decision.
 
-[Explore the interactive demo →](https://albertoreyescastro.github.io/agent-control-center/)
+**Measured on one Android tablet:** **441.07 ms median / 459.28 ms P95** over 108 cached searches; **74.77% smaller text encoder** after quantisation. Shipped within TeachScribe's **50+ UK-school product deployment** (product reach, **not measured feature adoption**).
+
+[Explore the public case study and evidence →](https://github.com/albertoreyescastro/teachscribe-on-device-multimodal-retrieval)
 
 </td>
 <td width="50%" valign="top">
 
 ### [ModelHawk](https://github.com/albertoreyescastro/ModelHawk)
 
-**ML workflow auditing and AI-assisted technical review**
+**ML notebook auditing · Deployed web application**
 
-A Jupyter notebook auditing tool that uses static analysis to identify ML workflow patterns and potential risks. Structured findings support an AI-assisted review layer with provider fallbacks and LaTeX PDF reporting.
+A Next.js/TypeScript tool that statically inspects Jupyter notebooks **without executing their code**. Deterministic checks flag potential data leakage, test-set reuse, threshold-tuning risks and reproducibility gaps. An optional AI examiner adds narrative guidance; PDF reports and production-container HTTP E2E tests support the workflow.
 
-`Static analysis → structured findings → AI-assisted review → PDF report`
+[Try the live demo →](https://modelhawk.onrender.com/) · [Inspect code and tests →](https://github.com/albertoreyescastro/ModelHawk)
+
+*The free-tier demo may need to wake after inactivity.*
 
 </td>
 </tr>
 <tr>
 <td width="50%" valign="top">
 
-### [Adaptive Whisper Pipeline](https://github.com/albertoreyescastro/adaptive-whisper-transcription-pipeline)
+### [Agent Control Center](https://github.com/albertoreyescastro/agent-control-center)
 
-**Hardware-aware speech inference**
+**Multi-agent orchestration and reliability engineering**
 
-A reusable transcription pipeline built on `faster-whisper`, with hardware-aware model selection and CPU/GPU execution. Includes audio normalisation, configurable voice activity detection, repetition safeguards, fingerprinted caching, quality checks and TXT/SRT export.
+A **sanitised, interactive simulation** of a multi-agent control plane: capability-aware routing, execution leases, heartbeat tracking, quota fencing, bounded recovery, independent verification and a human merge gate.
 
-`CPU / INT8` · `CUDA / FP16` · `FFmpeg` · `VAD`
+The public demo explains architectural decisions; it is **not live operational telemetry** or a control interface.
+
+[Explore the interactive demo →](https://albertoreyescastro.github.io/agent-control-center/)
 
 </td>
 <td width="50%" valign="top">
 
-### [Computational Physics](https://github.com/albertoreyescastro/computational-physics-numerical-methods)
+### [Adaptive Whisper Pipeline](https://github.com/albertoreyescastro/adaptive-whisper-transcription-pipeline)
 
-**Numerical methods and scientific computing**
+**Hardware-aware speech inference**
 
-Scientific Python implementations of interpolation, numerical quadrature, ordinary differential equation solvers and stochastic simulation. Applies numerical techniques to physical problems, including applications of Planck's law.
+A reproducible transcription workflow built on `faster-whisper` and CTranslate2, with CPU/CUDA-aware defaults, safe fallback, FFmpeg preprocessing, voice activity detection, fingerprinted caching, output checks and TXT/SRT export.
 
-`NumPy` · `SciPy` · `Matplotlib` · `SymPy`
+`CPU / INT8` · `CUDA / FP16` · `FFmpeg` · `VAD`
+
+[Source and validation →](https://github.com/albertoreyescastro/adaptive-whisper-transcription-pipeline) · [Kaggle demo →](https://www.kaggle.com/code/albertoreyescastro20/adaptive-whisper-transcription-pipeline-demo)
 
 </td>
 </tr>
 </table>
+
+## Additional work and contributions
+
+- **[IAC Scientific Publication ↔ Press Note Matching](https://github.com/albertoreyescastro/IAC-publication-press-note-matching)** — Reproducible English/Spanish scientific-text matching with RapidFuzz, evidence-based ranking and explicit human-review tiers; related to my IAC internship.
+- **[Computational Physics — Numerical Methods](https://github.com/albertoreyescastro/computational-physics-numerical-methods)** — Scientific Python notebooks covering interpolation, numerical integration, ODE solvers and stochastic simulation.
+- **[AIoT Smart Home — ESP32-S3](https://github.com/albertoreyescastro/AIoT-smart-home-esp32-wokwi)** — Simulation-based embedded C++ controllers, deterministic safety logic, Wokwi demos and a bounded TinyML experiment.
+- **[Vizro/Dash open-source investigation](https://github.com/mckinsey/vizro/issues/1750#issuecomment-4603400692)** — Contributed reproduction and regression-isolation evidence for a tab-rendering issue; the maintainer's separate [fix PR #1752](https://github.com/mckinsey/vizro/pull/1752) was subsequently merged.
+- **[Scientific publications and research](https://albertoreyescastro.github.io/#publications)** — IAC science-communication work and an English-language Physics thesis on ferroelectricity and ferroelasticity (**9.4/10**).
 
 ## Engineering approach
 
@@ -107,8 +123,9 @@ My evaluation approach starts with a baseline and controlled comparisons. I sele
 
 | Area | Tools |
 |---|---|
-| **Machine learning and inference** | `Python` · `NumPy` · `SciPy` · `pandas` · `scikit-learn` · `faster-whisper` · `ONNX` |
-| **AI systems and application engineering** | `TypeScript` · `Next.js` · `JavaScript` · `Node.js` · `REST APIs` · `Ollama` · `GitHub Actions` |
+| **Machine learning and inference** | `Python` · `NumPy` · `SciPy` · `pandas` · `scikit-learn` · `ONNX Runtime` · `TinyCLIP` |
+| **AI systems and application engineering** | `TypeScript` · `Next.js` · `React Native` · `Kotlin` · `SQLite` · `Docker` · `REST APIs` · `GitHub Actions` |
+| **Speech inference and media** | `faster-whisper` · `CTranslate2` · `FFmpeg` · `VAD` · `CPU / CUDA` |
 | **Scientific computing and development** | `Jupyter` · `Matplotlib` · `SymPy` · `LaTeX` · `SQL` · `Git` |
 | **Embedded systems and AIoT** | `C++` · `ESP32-S3` · `Wokwi` · `Blynk` · `Edge Impulse` |
 
