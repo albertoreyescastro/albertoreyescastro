@@ -4,7 +4,7 @@
 
 <p align="center">
   <a href="https://albertoreyescastro.github.io"><img src="./assets/button-portfolio.svg" height="42" alt="Portfolio" /></a>&nbsp;
-  <a href="https://www.linkedin.com/in/alberto-reyes-ba5546238"><img src="./assets/button-linkedin.svg" height="42" alt="LinkedIn" /></a>&nbsp;
+  <a href="https://www.linkedin.com/in/albertoreyescastro"><img src="./assets/button-linkedin.svg" height="42" alt="LinkedIn" /></a>&nbsp;
   <a href="https://www.kaggle.com/albertoreyescastro20"><img src="./assets/button-kaggle.svg" height="42" alt="Kaggle" /></a>
 </p>
 
@@ -138,6 +138,6 @@ My evaluation approach starts with a baseline and controlled comparisons. I sele
   Applied AI Engineer · Physics Graduate · MSc AI Technology Candidate · London, UK<br/><br/>
   <a href="mailto:albertoreyescastro20@gmail.com">Email</a> ·
   <a href="https://albertoreyescastro.github.io">Portfolio</a> ·
-  <a href="https://www.linkedin.com/in/alberto-reyes-ba5546238">LinkedIn</a> ·
+  <a href="https://www.linkedin.com/in/albertoreyescastro">LinkedIn</a> ·
   <a href="https://www.kaggle.com/albertoreyescastro20">Kaggle</a>
 </p>
