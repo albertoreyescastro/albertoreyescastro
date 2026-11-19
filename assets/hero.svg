@@ -1,6 +1,75 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360" role="img" aria-labelledby="title desc">
   <title id="title">Alberto Reyes Castro — Applied AI Engineer</title>
-  <desc id="desc">Custom profile banner highlighting reliable AI systems, multimodal machine learning, agent orchestration and scientific computing.</desc>
+  <desc id="desc">Custom profile banner highlighting reliable AI systems, multimodal machine learning, agent orchestration and scientific computing. An engineering-loop card shows MODEL, ROUTE, VERIFY and HUMAN GATE; a soft light travels along each connector in that order and the loop repeats slowly. With reduced motion the diagram is shown static.</desc>
+  <!--
+    Engineering loop animation: one shared 12 s clock (CSS, no script).
+       MODEL glow       0.30s -> 3.40s
+       pulse MODEL>ROUTE 1.10s -> 2.17s  (40 u)
+       ROUTE glow       1.83s -> 4.90s
+       pulse ROUTE>VERIFY 2.60s -> 3.67s  (40 u)
+       VERIFY glow      3.33s -> 6.40s
+       pulse VERIFY>HUMAN 4.10s -> 6.13s  (97.57 u)
+       HUMAN GATE glow  5.79s -> 9.90s
+       rest (static)    9.90s -> 12.00s
+    Pulses are dashes travelling along the exact connector geometry
+    (stroke-dashoffset); they emerge from the source box edge and are
+    absorbed at the input port of the next box. Without CSS animation
+    support, or with prefers-reduced-motion: reduce, every animated layer
+    keeps opacity 0 and the static diagram is shown.
+  -->
+  <style>
+    .loop-anim { animation-duration: 12s; animation-iteration-count: infinite; animation-fill-mode: both; }
+    .glow { animation-timing-function: ease-in-out; }
+    .pulse { animation-timing-function: linear; }
+    .glow-model { animation-name: glow-model; }
+    .glow-route { animation-name: glow-route; }
+    .glow-verify { animation-name: glow-verify; }
+    .glow-human { animation-name: glow-human; }
+    .pulse-1 { animation-name: pulse-1; }
+    .pulse-2 { animation-name: pulse-2; }
+    .pulse-3 { animation-name: pulse-3; }
+    @keyframes glow-model {
+      0%, 2.5% { opacity: 0; }
+      7.5%, 18.333% { opacity: 1; }
+      28.333%, 100% { opacity: 0; }
+    }
+    @keyframes glow-route {
+      0%, 15.278% { opacity: 0; }
+      20.111%, 30.833% { opacity: 1; }
+      40.833%, 100% { opacity: 0; }
+    }
+    @keyframes glow-verify {
+      0%, 27.778% { opacity: 0; }
+      32.611%, 43.333% { opacity: 1; }
+      53.333%, 100% { opacity: 0; }
+    }
+    @keyframes glow-human {
+      0%, 48.273% { opacity: 0; }
+      53.44%, 71.667% { opacity: 1; }
+      82.5%, 100% { opacity: 0; }
+    }
+    @keyframes pulse-1 {
+      0%, 9% { stroke-dashoffset: 20; opacity: 0; }
+      9.167% { stroke-dashoffset: 20; opacity: 1; }
+      18.056% { stroke-dashoffset: -44; opacity: 1; }
+      18.222%, 100% { stroke-dashoffset: -44; opacity: 0; }
+    }
+    @keyframes pulse-2 {
+      0%, 21.5% { stroke-dashoffset: 20; opacity: 0; }
+      21.667% { stroke-dashoffset: 20; opacity: 1; }
+      30.556% { stroke-dashoffset: -44; opacity: 1; }
+      30.722%, 100% { stroke-dashoffset: -44; opacity: 0; }
+    }
+    @keyframes pulse-3 {
+      0%, 34% { stroke-dashoffset: 20; opacity: 0; }
+      34.167% { stroke-dashoffset: 20; opacity: 1; }
+      51.051% { stroke-dashoffset: -101.57; opacity: 1; }
+      51.218%, 100% { stroke-dashoffset: -101.57; opacity: 0; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .loop-anim { animation: none; }
+    }
+  </style>
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#07111f"/>
@@ -11,19 +80,66 @@
       <stop offset="0" stop-color="#68e0cf"/>
       <stop offset="1" stop-color="#9cc5ff"/>
     </linearGradient>
+    <radialGradient id="haloLoop" cx="946" cy="176" r="330" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#68e0cf" stop-opacity="0.16"/>
+      <stop offset="0.35" stop-color="#5fb8c9" stop-opacity="0.085"/>
+      <stop offset="0.7" stop-color="#9cc5ff" stop-opacity="0.025"/>
+      <stop offset="1" stop-color="#9cc5ff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="haloName" cx="250" cy="70" r="420" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#9cc5ff" stop-opacity="0.06"/>
+      <stop offset="0.6" stop-color="#c4b5fd" stop-opacity="0.02"/>
+      <stop offset="1" stop-color="#c4b5fd" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="gridFade" cx="760" cy="170" r="760" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="0.75" stop-color="#ffffff" stop-opacity="0.7"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0.35"/>
+    </radialGradient>
+    <mask id="gridMask" maskUnits="userSpaceOnUse" x="0" y="0" width="1200" height="360">
+      <rect width="1200" height="360" fill="url(#gridFade)"/>
+    </mask>
     <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
-      <path d="M32 0H0V32" fill="none" stroke="#ffffff" stroke-opacity="0.045" stroke-width="1"/>
+      <path d="M32 0H0V32" fill="none" stroke="#ffffff" stroke-opacity="0.05" stroke-width="1"/>
     </pattern>
+    <linearGradient id="cardEdge" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.10"/>
+      <stop offset="0.35" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <!-- connector paints in card-local user space: horizontal/vertical lines have a
+         zero-height bounding box, so objectBoundingBox gradients would not render -->
+    <linearGradient id="wire1" x1="106" y1="0" x2="146" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#68e0cf"/>
+      <stop offset="1" stop-color="#9cc5ff"/>
+    </linearGradient>
+    <linearGradient id="wire2" x1="226" y1="0" x2="266" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#9cc5ff"/>
+      <stop offset="1" stop-color="#c4b5fd"/>
+    </linearGradient>
+    <linearGradient id="wire3" x1="306" y1="102" x2="266" y2="163" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#c4b5fd"/>
+      <stop offset="1" stop-color="#a7f3d0"/>
+    </linearGradient>
     <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
       <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="nodeHalo" x="-40%" y="-60%" width="180%" height="220%">
+      <feGaussianBlur stdDeviation="4"/>
+    </filter>
+    <filter id="pulseHalo" filterUnits="userSpaceOnUse" x="0" y="0" width="372" height="244">
+      <feGaussianBlur stdDeviation="3"/>
     </filter>
   </defs>
 
+  <!-- background, grid and halos -->
   <rect width="1200" height="360" rx="28" fill="url(#bg)"/>
-  <rect width="1200" height="360" rx="28" fill="url(#grid)"/>
+  <rect width="1200" height="360" rx="28" fill="url(#haloName)"/>
+  <rect width="1200" height="360" rx="28" fill="url(#haloLoop)"/>
+  <rect width="1200" height="360" rx="28" fill="url(#grid)" mask="url(#gridMask)"/>
   <rect x="1" y="1" width="1198" height="358" rx="27" fill="none" stroke="#ffffff" stroke-opacity="0.09"/>
 
+  <!-- identity (content unchanged) -->
   <g transform="translate(64 58)">
     <text x="0" y="0" fill="#8fa7bf" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="15" letter-spacing="2">ALBERTO REYES CASTRO  /  LONDON, UK</text>
     <text x="0" y="67" fill="#f5f8fb" font-family="Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif" font-size="54" font-weight="700" letter-spacing="-1.5">Applied AI Engineer</text>
@@ -33,33 +149,73 @@
     <text x="0" y="212" fill="#d9e4ec" font-family="Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif" font-size="17">evaluation  •  scientific computing  •  human-gated automation</text>
   </g>
 
+  <!-- engineering loop card -->
   <g transform="translate(760 58)">
-    <rect x="0" y="0" width="372" height="244" rx="22" fill="#07111f" fill-opacity="0.76" stroke="#90a9bd" stroke-opacity="0.18"/>
-    <text x="24" y="33" fill="#8099ad" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" letter-spacing="1.4">ENGINEERING LOOP</text>
+    <rect x="0" y="0" width="372" height="244" rx="22" fill="#07111f" fill-opacity="0.78" stroke="#90a9bd" stroke-opacity="0.2"/>
+    <rect x="0.5" y="0.5" width="371" height="243" rx="21.5" fill="none" stroke="url(#cardEdge)"/>
+    <text x="26" y="34" fill="#8099ad" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" letter-spacing="1.4">ENGINEERING LOOP</text>
 
-    <g transform="translate(30 72)" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13">
-      <rect x="0" y="0" width="80" height="44" rx="10" fill="#0d2830" stroke="#68e0cf" stroke-opacity="0.65"/>
-      <text x="40" y="27" text-anchor="middle" fill="#d8fff7">MODEL</text>
+    <!-- connectors (static); each one ends exactly on the edge of the next box -->
+    <g fill="none" stroke-width="2" stroke-opacity="0.62">
+      <path d="M106 80H146" stroke="url(#wire1)"/>
+      <path d="M226 80H266" stroke="url(#wire2)"/>
+    </g>
+    <path d="M306 102V155A8 8 0 0 1 298 163H266" fill="none" stroke="#7a8fa3" stroke-width="1.5" stroke-dasharray="5 5" stroke-linecap="round"/>
 
-      <path d="M86 22H128" stroke="#68e0cf" stroke-width="2" stroke-opacity="0.7"/>
-      <circle cx="130" cy="22" r="3" fill="#68e0cf" filter="url(#softGlow)"/>
-
-      <rect x="136" y="0" width="80" height="44" rx="10" fill="#102238" stroke="#9cc5ff" stroke-opacity="0.65"/>
-      <text x="176" y="27" text-anchor="middle" fill="#e4efff">ROUTE</text>
-
-      <path d="M222 22H264" stroke="#9cc5ff" stroke-width="2" stroke-opacity="0.7"/>
-      <circle cx="266" cy="22" r="3" fill="#9cc5ff" filter="url(#softGlow)"/>
-
-      <rect x="272" y="0" width="70" height="44" rx="10" fill="#171f31" stroke="#c4b5fd" stroke-opacity="0.65"/>
-      <text x="307" y="27" text-anchor="middle" fill="#eee9ff">CHECK</text>
-
-      <path d="M307 50V81H176" fill="none" stroke="#71859a" stroke-width="1.5" stroke-dasharray="5 5"/>
-      <circle cx="176" cy="81" r="3" fill="#71859a"/>
-
-      <rect x="102" y="92" width="148" height="48" rx="11" fill="#18251f" stroke="#a7f3d0" stroke-opacity="0.55"/>
-      <text x="176" y="121" text-anchor="middle" fill="#e5fff2">HUMAN GATE</text>
+    <!-- travelling signals (hidden at rest) -->
+    <g class="loop-anim pulse pulse-1" opacity="0" fill="none" stroke="url(#wire1)" stroke-linecap="round" stroke-dasharray="16 400" stroke-dashoffset="20">
+      <path d="M106 80H146" stroke-width="6" stroke-opacity="0.55" filter="url(#pulseHalo)"/>
+      <path d="M106 80H146" stroke-width="2.6"/>
+      <path d="M106 80H146" stroke="#f4fffd" stroke-width="1.1" stroke-opacity="0.85"/>
+    </g>
+    <g class="loop-anim pulse pulse-2" opacity="0" fill="none" stroke="url(#wire2)" stroke-linecap="round" stroke-dasharray="16 400" stroke-dashoffset="20">
+      <path d="M226 80H266" stroke-width="6" stroke-opacity="0.55" filter="url(#pulseHalo)"/>
+      <path d="M226 80H266" stroke-width="2.6"/>
+      <path d="M226 80H266" stroke="#f4fffd" stroke-width="1.1" stroke-opacity="0.85"/>
+    </g>
+    <g class="loop-anim pulse pulse-3" opacity="0" fill="none" stroke="url(#wire3)" stroke-linecap="round" stroke-dasharray="16 400" stroke-dashoffset="20">
+      <path d="M306 102V155A8 8 0 0 1 298 163H266" stroke-width="6" stroke-opacity="0.55" filter="url(#pulseHalo)"/>
+      <path d="M306 102V155A8 8 0 0 1 298 163H266" stroke-width="2.6"/>
+      <path d="M306 102V155A8 8 0 0 1 298 163H266" stroke="#f4fffd" stroke-width="1.1" stroke-opacity="0.85"/>
     </g>
 
-    <text x="24" y="226" fill="#70889a" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11">capability · evidence · recovery · authority</text>
+    <!-- stages -->
+    <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14">
+      <rect x="26" y="58" width="80" height="44" rx="10" fill="#0d2830" stroke="#68e0cf" stroke-opacity="0.65"/>
+      <text x="66" y="85" text-anchor="middle" fill="#d8fff7">MODEL</text>
+      <rect x="146" y="58" width="80" height="44" rx="10" fill="#102238" stroke="#9cc5ff" stroke-opacity="0.65"/>
+      <text x="186" y="85" text-anchor="middle" fill="#e4efff">ROUTE</text>
+      <rect x="266" y="58" width="80" height="44" rx="10" fill="#171f31" stroke="#c4b5fd" stroke-opacity="0.65"/>
+      <text x="306" y="85" text-anchor="middle" fill="#eee9ff">VERIFY</text>
+      <rect x="106" y="140" width="160" height="46" rx="11" fill="#18251f" stroke="#a7f3d0" stroke-opacity="0.55"/>
+      <text x="186" y="168" text-anchor="middle" fill="#e5fff2">HUMAN GATE</text>
+    </g>
+
+    <!-- stage highlights (hidden at rest) -->
+    <g class="loop-anim glow glow-model" opacity="0">
+      <rect x="26" y="58" width="80" height="44" rx="10" fill="none" stroke="#68e0cf" stroke-width="5" stroke-opacity="0.5" filter="url(#nodeHalo)"/>
+      <rect x="26" y="58" width="80" height="44" rx="10" fill="#68e0cf" fill-opacity="0.09" stroke="#68e0cf" stroke-width="1.5"/>
+    </g>
+    <g class="loop-anim glow glow-route" opacity="0">
+      <rect x="146" y="58" width="80" height="44" rx="10" fill="none" stroke="#9cc5ff" stroke-width="5" stroke-opacity="0.5" filter="url(#nodeHalo)"/>
+      <rect x="146" y="58" width="80" height="44" rx="10" fill="#9cc5ff" fill-opacity="0.09" stroke="#9cc5ff" stroke-width="1.5"/>
+    </g>
+    <g class="loop-anim glow glow-verify" opacity="0">
+      <rect x="266" y="58" width="80" height="44" rx="10" fill="none" stroke="#c4b5fd" stroke-width="5" stroke-opacity="0.5" filter="url(#nodeHalo)"/>
+      <rect x="266" y="58" width="80" height="44" rx="10" fill="#c4b5fd" fill-opacity="0.09" stroke="#c4b5fd" stroke-width="1.5"/>
+    </g>
+    <g class="loop-anim glow glow-human" opacity="0">
+      <rect x="106" y="140" width="160" height="46" rx="11" fill="none" stroke="#a7f3d0" stroke-width="5" stroke-opacity="0.5" filter="url(#nodeHalo)"/>
+      <rect x="106" y="140" width="160" height="46" rx="11" fill="#a7f3d0" fill-opacity="0.09" stroke="#a7f3d0" stroke-width="1.5"/>
+    </g>
+
+    <!-- input ports -->
+    <g filter="url(#softGlow)">
+      <circle cx="146" cy="80" r="2.6" fill="#9cc5ff"/>
+      <circle cx="266" cy="80" r="2.6" fill="#c4b5fd"/>
+      <circle cx="266" cy="163" r="2.6" fill="#a7f3d0"/>
+    </g>
+
+    <text x="26" y="220" fill="#8399ac" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12">capability · evidence · recovery · authority</text>
   </g>
 </svg>

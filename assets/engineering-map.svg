@@ -1,42 +1,173 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="190" viewBox="0 0 1200 190" role="img" aria-labelledby="title desc">
   <title id="title">Engineering approach</title>
-  <desc id="desc">A compact systems diagram from model capability through routing and verification to human authority.</desc>
+  <desc id="desc">A compact systems diagram from model capability through routing and verification to human authority: MODEL (capability), ROUTE (eligibility), RUN (bounded state), VERIFY (evidence) and HUMAN (authority), connected left to right. A faint light sweeps slowly along the line; with reduced motion the diagram is shown static.</desc>
+  <!--
+    Secondary animation, intentionally quieter than the hero loop:
+    one continuous sweep (no relay between stages), 14 s cycle,
+    head leaves MODEL at 0.80s and clears HUMAN at 7.73s.
+       MODEL   ring brightens near 0.80s
+       ROUTE   ring brightens near 2.36s
+       RUN     ring brightens near 3.88s
+       VERIFY  ring brightens near 5.40s
+       HUMAN   ring brightens near 6.92s
+    The sweep is clipped to the spine and passes beneath the stage circles.
+  -->
+  <style>
+    .map-anim { animation-duration: 14s; animation-iteration-count: infinite; animation-fill-mode: both; }
+    .sweep { animation-name: sweep; animation-timing-function: linear; }
+    .node-glow { animation-timing-function: ease-in-out; }
+    .glow-model { animation-name: glow-model; }
+    .glow-route { animation-name: glow-route; }
+    .glow-run { animation-name: glow-run; }
+    .glow-verify { animation-name: glow-verify; }
+    .glow-human { animation-name: glow-human; }
+    @keyframes glow-model {
+      0%, 2.5% { opacity: 0; }
+      5.714%, 7.5% { opacity: 0.75; }
+      15%, 100% { opacity: 0; }
+    }
+    @keyframes glow-route {
+      0%, 14.738% { opacity: 0; }
+      16.881%, 17.595% { opacity: 0.75; }
+      24.738%, 100% { opacity: 0; }
+    }
+    @keyframes glow-run {
+      0%, 25.595% { opacity: 0; }
+      27.738%, 28.452% { opacity: 0.75; }
+      35.595%, 100% { opacity: 0; }
+    }
+    @keyframes glow-verify {
+      0%, 36.452% { opacity: 0; }
+      38.595%, 39.31% { opacity: 0.75; }
+      46.452%, 100% { opacity: 0; }
+    }
+    @keyframes glow-human {
+      0%, 47.262% { opacity: 0; }
+      49.405%, 50.119% { opacity: 0.75; }
+      62.619%, 100% { opacity: 0; }
+    }
+    @keyframes sweep {
+      0%, 5.714% { transform: translateX(0); opacity: 0; }
+      5.857% { transform: translateX(3px); opacity: 1; }
+      55.095% { transform: translateX(1037px); opacity: 1; }
+      55.238%, 100% { transform: translateX(1040px); opacity: 0; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .map-anim { animation: none; }
+    }
+  </style>
   <defs>
-    <linearGradient id="line" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#68e0cf"/>
-      <stop offset="0.5" stop-color="#9cc5ff"/>
-      <stop offset="1" stop-color="#c4b5fd"/>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a1220"/>
+      <stop offset="0.6" stop-color="#0b1320"/>
+      <stop offset="1" stop-color="#0b191e"/>
     </linearGradient>
+    <radialGradient id="halo" cx="600" cy="88" r="560" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#9cc5ff" stop-opacity="0.06"/>
+      <stop offset="0.6" stop-color="#68e0cf" stop-opacity="0.02"/>
+      <stop offset="1" stop-color="#68e0cf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="gridFade" cx="600" cy="95" r="640" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0.25"/>
+    </radialGradient>
+    <mask id="gridMask" maskUnits="userSpaceOnUse" x="0" y="0" width="1200" height="190">
+      <rect width="1200" height="190" fill="url(#gridFade)"/>
+    </mask>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M32 0H0V32" fill="none" stroke="#ffffff" stroke-opacity="0.04" stroke-width="1"/>
+    </pattern>
+    <!-- user-space gradient: a horizontal line has a zero-height bounding box,
+         so the previous objectBoundingBox gradient was never painted -->
+    <linearGradient id="line" x1="145" y1="0" x2="1055" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#68e0cf"/>
+      <stop offset="0.2495" stop-color="#9cc5ff"/>
+      <stop offset="0.5" stop-color="#d7e0e8"/>
+      <stop offset="0.7505" stop-color="#c4b5fd"/>
+      <stop offset="1" stop-color="#a7f3d0"/>
+    </linearGradient>
+    <linearGradient id="comet" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#e8f7ff" stop-opacity="0"/>
+      <stop offset="0.75" stop-color="#e8f7ff" stop-opacity="0.35"/>
+      <stop offset="0.96" stop-color="#f4fbff" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#f4fbff" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="spineClip">
+      <rect x="145" y="70" width="910" height="24"/>
+    </clipPath>
+    <filter id="cometBlur" x="-10%" y="-200%" width="120%" height="500%">
+      <feGaussianBlur stdDeviation="2.2"/>
+    </filter>
+    <filter id="ringHalo" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3.5"/>
+    </filter>
   </defs>
-  <rect width="1200" height="190" rx="22" fill="#0b1320"/>
-  <rect x="1" y="1" width="1198" height="188" rx="21" fill="none" stroke="#ffffff" stroke-opacity="0.08"/>
-  <path d="M145 82H1055" stroke="url(#line)" stroke-width="2" opacity="0.65"/>
 
+  <rect width="1200" height="190" rx="22" fill="url(#bg)"/>
+  <rect width="1200" height="190" rx="22" fill="url(#halo)"/>
+  <rect width="1200" height="190" rx="22" fill="url(#grid)" mask="url(#gridMask)"/>
+  <rect x="1" y="1" width="1198" height="188" rx="21" fill="none" stroke="#ffffff" stroke-opacity="0.08"/>
+
+  <!-- spine and direction marks (static) -->
+  <path d="M145 82H1055" stroke="url(#line)" stroke-width="2" stroke-opacity="0.6"/>
+  <path d="M255.5 77L261.5 82L255.5 87 M483 77L489 82L483 87 M711 77L717 82L711 87 M938.5 77L944.5 82L938.5 87" fill="none" stroke="url(#line)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" stroke-opacity="0.9"/>
+
+  <!-- sweep (hidden at rest); clipped to the spine, drawn beneath the stages -->
+  <g clip-path="url(#spineClip)">
+    <g class="map-anim sweep" opacity="0">
+      <rect x="15" y="78" width="130" height="8" rx="4" fill="url(#comet)" opacity="0.55" filter="url(#cometBlur)"/>
+      <rect x="15" y="80.9" width="130" height="2.2" rx="1.1" fill="url(#comet)" opacity="0.8"/>
+    </g>
+  </g>
+
+  <!-- stages (content unchanged) -->
   <g font-family="Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif" text-anchor="middle">
     <g transform="translate(145 82)">
       <circle r="34" fill="#0d2830" stroke="#68e0cf"/>
       <text y="5" fill="#e2fff8" font-size="14" font-weight="700">MODEL</text>
-      <text y="62" fill="#93a9bb" font-size="13">capability</text>
+      <text y="64" fill="#a3b6c6" font-size="15">capability</text>
     </g>
     <g transform="translate(372 82)">
       <circle r="34" fill="#102238" stroke="#9cc5ff"/>
       <text y="5" fill="#e7f0ff" font-size="14" font-weight="700">ROUTE</text>
-      <text y="62" fill="#93a9bb" font-size="13">eligibility</text>
+      <text y="64" fill="#a3b6c6" font-size="15">eligibility</text>
     </g>
     <g transform="translate(600 82)">
-      <circle r="34" fill="#161d31" stroke="#c4b5fd"/>
-      <text y="5" fill="#f0ebff" font-size="14" font-weight="700">RUN</text>
-      <text y="62" fill="#93a9bb" font-size="13">bounded state</text>
+      <circle r="34" fill="#1b2330" stroke="#d7e0e8" stroke-opacity="0.75"/>
+      <text y="5" fill="#f0f4f7" font-size="14" font-weight="700">RUN</text>
+      <text y="64" fill="#a3b6c6" font-size="15">bounded state</text>
     </g>
     <g transform="translate(828 82)">
-      <circle r="34" fill="#1b2330" stroke="#d7e0e8" stroke-opacity="0.75"/>
-      <text y="5" fill="#f0f4f7" font-size="14" font-weight="700">VERIFY</text>
-      <text y="62" fill="#93a9bb" font-size="13">evidence</text>
+      <circle r="34" fill="#161d31" stroke="#c4b5fd"/>
+      <text y="5" fill="#f0ebff" font-size="14" font-weight="700">VERIFY</text>
+      <text y="64" fill="#a3b6c6" font-size="15">evidence</text>
     </g>
     <g transform="translate(1055 82)">
       <circle r="34" fill="#17251f" stroke="#a7f3d0"/>
       <text y="5" fill="#edfff4" font-size="14" font-weight="700">HUMAN</text>
-      <text y="62" fill="#93a9bb" font-size="13">authority</text>
+      <text y="64" fill="#a3b6c6" font-size="15">authority</text>
     </g>
   </g>
+
+  <!-- stage highlights (hidden at rest) -->
+    <g class="map-anim node-glow glow-model" opacity="0">
+      <circle cx="145" cy="82" r="34" fill="none" stroke="#68e0cf" stroke-width="5" stroke-opacity="0.45" filter="url(#ringHalo)"/>
+      <circle cx="145" cy="82" r="34" fill="none" stroke="#68e0cf" stroke-width="1.6"/>
+    </g>
+    <g class="map-anim node-glow glow-route" opacity="0">
+      <circle cx="372" cy="82" r="34" fill="none" stroke="#9cc5ff" stroke-width="5" stroke-opacity="0.45" filter="url(#ringHalo)"/>
+      <circle cx="372" cy="82" r="34" fill="none" stroke="#9cc5ff" stroke-width="1.6"/>
+    </g>
+    <g class="map-anim node-glow glow-run" opacity="0">
+      <circle cx="600" cy="82" r="34" fill="none" stroke="#d7e0e8" stroke-width="5" stroke-opacity="0.45" filter="url(#ringHalo)"/>
+      <circle cx="600" cy="82" r="34" fill="none" stroke="#d7e0e8" stroke-width="1.6"/>
+    </g>
+    <g class="map-anim node-glow glow-verify" opacity="0">
+      <circle cx="828" cy="82" r="34" fill="none" stroke="#c4b5fd" stroke-width="5" stroke-opacity="0.45" filter="url(#ringHalo)"/>
+      <circle cx="828" cy="82" r="34" fill="none" stroke="#c4b5fd" stroke-width="1.6"/>
+    </g>
+    <g class="map-anim node-glow glow-human" opacity="0">
+      <circle cx="1055" cy="82" r="34" fill="none" stroke="#a7f3d0" stroke-width="5" stroke-opacity="0.45" filter="url(#ringHalo)"/>
+      <circle cx="1055" cy="82" r="34" fill="none" stroke="#a7f3d0" stroke-width="1.6"/>
+    </g>
 </svg>
