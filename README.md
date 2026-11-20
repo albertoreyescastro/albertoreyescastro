@@ -12,7 +12,7 @@
 
 I am an **Applied AI Engineer at TeachScribe**, completing an **MSc in Artificial Intelligence Technology with Advanced Practice at Northumbria University London**. With a **BSc in Physics** from the University of La Laguna, I approach AI through controlled experiments, measurement and explicit assumptions.
 
-My work spans **multimodal and on-device ML, efficient inference, ML evaluation and reliable AI systems**. At TeachScribe, I designed, implemented, measured and delivered an Android image–text retrieval pipeline. Previously, I worked with Python and scientific communication at the **Instituto de Astrofísica de Canarias (IAC)**.
+My work spans **multimodal and on-device ML, efficient inference, ML evaluation and reliable AI systems**. At TeachScribe, I designed, implemented, measured and delivered an Android image–text retrieval pipeline. Previously, at the **Instituto de Astrofísica de Canarias (IAC)**, I introduced the communication unit's first automated subtitle workflow, which it still uses, and built tools to connect scientific outreach to its underlying research. That work combined practical Python automation, careful verification and science communication.
 
 <table>
 <tr>
@@ -107,7 +107,7 @@ A reproducible transcription workflow built on `faster-whisper` and CTranslate2,
 
 ## Additional work and contributions
 
-- **[IAC Scientific Publication ↔ Press Note Matching](https://github.com/albertoreyescastro/IAC-publication-press-note-matching)** — Reproducible English/Spanish scientific-text matching with RapidFuzz, evidence-based ranking and explicit human-review tiers; related to my IAC internship.
+- **[IAC Scientific Publication ↔ Press Note Matching](https://github.com/albertoreyescastro/IAC-publication-press-note-matching)** — An interpretable RapidFuzz-based approach developed and run in hours: 67 outreach articles linked to papers from 752 titles, cross-checked against an independent two-day manual review, with references added to the IAC website. The public repository includes a smaller reproducible sample.
 - **[Computational Physics — Numerical Methods](https://github.com/albertoreyescastro/computational-physics-numerical-methods)** — Scientific Python notebooks covering interpolation, numerical integration, ODE solvers and stochastic simulation.
 - **[AIoT Smart Home — ESP32-S3](https://github.com/albertoreyescastro/AIoT-smart-home-esp32-wokwi)** — Simulation-based embedded C++ controllers, deterministic safety logic, Wokwi demos and a bounded TinyML experiment.
 - **[Vizro/Dash open-source investigation](https://github.com/mckinsey/vizro/issues/1750#issuecomment-4603400692)** — Contributed reproduction and regression-isolation evidence for a tab-rendering issue; the maintainer's separate [fix PR #1752](https://github.com/mckinsey/vizro/pull/1752) was subsequently merged.
