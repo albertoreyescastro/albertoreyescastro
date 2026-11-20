@@ -48,13 +48,15 @@ My work spans **multimodal and on-device ML, efficient inference, ML evaluation 
 
 ### [TeachScribe — On-Device Multimodal Retrieval](https://github.com/albertoreyescastro/teachscribe-on-device-multimodal-retrieval)
 
-**Production-integrated applied ML · Android**
+**Applied ML in production · Android**
 
-**Feature delivered to production** — shipped within TeachScribe's **50+ UK-school product deployment** (product reach, **not measured feature adoption**).
+Built **on-device photo search** and shipped it through TeachScribe's app to **50+ UK schools**.
 
-Benchmarked **five vision-language models**, selected TinyCLIP 39M/16 and deployed separate **INT8 ONNX** text/image encoders with native Kotlin preprocessing and RAM/SQLite embedding reuse. Retrieval stays on-device; teachers retain the final photo-selection decision.
+Benchmarked **five vision–language models**, selected **TinyCLIP 39M/16**, and deployed separate **INT8 ONNX text and image encoders** with native **Kotlin preprocessing** and a **RAM/SQLite embedding cache**. Retrieval runs entirely on the device; teachers make the final photo-selection decision.
 
-**Measured on one Android tablet:** **441.07 ms median / 459.28 ms P95** over 108 cached searches; **74.77% smaller text encoder** after quantisation.
+**Measured on one Android 7 tablet:** **441 ms median · 459 ms P95** across **108 cached searches** over 44 photos. **INT8 quantisation reduced text-encoder size by 74.8%.**
+
+*School reach reflects product distribution; feature-level usage metrics are pending.*
 
 [Explore the public case study and evidence →](https://github.com/albertoreyescastro/teachscribe-on-device-multimodal-retrieval)
 
