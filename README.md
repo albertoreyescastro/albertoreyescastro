@@ -12,7 +12,7 @@
 
 I am an **Applied AI Engineer at TeachScribe**, completing an **MSc in Artificial Intelligence Technology with Advanced Practice at Northumbria University London**. With a **BSc in Physics** from the University of La Laguna, I approach AI through controlled experiments, measurement and explicit assumptions.
 
-My work spans **multimodal and on-device ML, efficient inference, ML evaluation and reliable AI systems**. At TeachScribe, I designed, implemented, measured and delivered an Android image–text retrieval pipeline. Previously, at the **Instituto de Astrofísica de Canarias (IAC)**, I introduced the communication unit's first automated subtitle workflow, which it still uses, and built tools to connect scientific outreach to its underlying research. That work combined practical Python automation, careful verification and science communication.
+My work spans **multimodal and on-device ML, efficient inference, ML evaluation and reliable AI systems**. At TeachScribe, I designed, implemented, measured and shipped the company's first on-device photo-search feature to 50+ UK schools. Previously, at the **Instituto de Astrofísica de Canarias (IAC)**, I introduced the communication unit's first automated subtitle workflow, which it still uses, and built tools to connect scientific outreach to its underlying research. That work combined practical Python automation, careful verification and science communication.
 
 <table>
 <tr>
@@ -50,7 +50,7 @@ My work spans **multimodal and on-device ML, efficient inference, ML evaluation 
 
 **Applied ML in production · Android**
 
-Built **on-device photo search** and shipped it through TeachScribe's app to **50+ UK schools**.
+Built **TeachScribe's first on-device photo-search feature** and shipped it through the app to **all 50+ UK schools**.
 
 Benchmarked **five vision–language models**, selected **TinyCLIP 39M/16**, and deployed separate **INT8 ONNX text and image encoders** with native **Kotlin preprocessing** and a **RAM/SQLite embedding cache**. Retrieval runs entirely on the device; teachers make the final photo-selection decision.
 
