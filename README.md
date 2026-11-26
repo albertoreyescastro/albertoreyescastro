@@ -107,6 +107,7 @@ A reproducible transcription workflow built on `faster-whisper` and CTranslate2,
 
 ## Additional work and contributions
 
+- **[Credit Card Fraud Detection](https://github.com/albertoreyescastro/credit-card-fraud-detection)** — Collaborative MSc project (May 2026, original mark **85/100**), extended for the portfolio with grouped nested cross-validation, threshold selection and bootstrap intervals. XGBoost detected **79/95 fraud cases with 10 false positives** on a retrospective holdout (AP 0.8622; ROC-AUC 0.9780), with a separate chronological evaluation.
 - **[IAC Scientific Publication ↔ Press Note Matching](https://github.com/albertoreyescastro/IAC-publication-press-note-matching)** — An interpretable RapidFuzz-based approach developed and run in hours: 67 outreach articles linked to papers from 752 titles, cross-checked against an independent two-day manual review, with references added to the IAC website. The public repository includes a smaller reproducible sample.
 - **[Computational Physics — Numerical Methods](https://github.com/albertoreyescastro/computational-physics-numerical-methods)** — Scientific Python notebooks covering interpolation, numerical integration, ODE solvers and stochastic simulation.
 - **[AIoT Smart Home — ESP32-S3](https://github.com/albertoreyescastro/AIoT-smart-home-esp32-wokwi)** — Simulation-based embedded C++ controllers, deterministic safety logic, Wokwi demos and a bounded TinyML experiment.
